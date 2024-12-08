@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Header */
 h1 {
   color: cadetblue;
@@ -6,7 +12,13 @@ h1 {
   text-decoration: underline;
 }
 
-
+/*Body*/
+body{
+  min-height: 100vh;
+  background-color: bisque;
+  
+  
+}
 
 /* Main Table */
 
@@ -21,6 +33,15 @@ h1 {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-style: ridge;
   background-image: url(/simple_shopping_cart/simple_shopping_cart/images/groceries-5216716_1280.jpg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.content-table thead {
+  position: sticky;
+  top: 0;
+  left: 0;
+
 }
 
 .content-table thead tr {
@@ -34,6 +55,7 @@ h1 {
 .content-table th,
 .content-table tr {
   padding: 20px 25px;
+  text-shadow: 50px;
 }
 
 .content-table tbody tr {
@@ -60,8 +82,13 @@ h1 {
   color: rgb(241, 6, 6); 
 }
 
+.content-table tbody tr:hover {
+  background-color: #fff6ff;
+}
+
 td {
   border: 1px solid black;
+  text-align: center;
 }
 
 .content-table th td {
