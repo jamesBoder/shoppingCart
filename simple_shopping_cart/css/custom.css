@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+container {
+  margin: auto;
+}
+
 /* Header */
 h1 {
   color: cadetblue;
@@ -81,7 +85,11 @@ body{
   background-color: #fff6fb;
 }
 
-
+/*.content-table th td {
+  padding: 20px;
+  border-radius: 20px;
+  
+}*/
 
 td {
   border: 1px solid black;
