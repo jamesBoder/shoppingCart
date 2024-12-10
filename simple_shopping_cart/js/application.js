@@ -41,10 +41,19 @@ var updateCart = function () {
 };
 
 $(document).ready(function () {
+  
 
-  $('.btn.remove').on('click', function (event) {
+  $(document).on('click', '.btn.remove', function (event) {
     $(this).closest('tr').remove();
     updateCart();
+  });
+
+  let timeout;
+  $(document).on('input', 'tr input', function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      updateCart();
+    }, 1000);
   });
 
   $('tr input').on('input', function(){
@@ -55,7 +64,34 @@ $(document).ready(function () {
       let cost = unitPrice * quantity;
       $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
     });
+
     updateCart();
+  })
+  
+
+  $('#addRow').on('click', '.btn.add', function (event) {
+    event.preventDefault();
+    let food = $(this).children('[name=food]').value;
+    let price = $(this).children('[name=price]').value;
+    let quantity = $(this).children('[name=quantity]').value;
+    
+    
+    $('tbody').append('<tr>' + 
+      '<th class="food">' + food + '</th>' + 
+      '<td class="price"><input type="number" value="' + price + '"/></td>' + 
+      '<td class="quantity"><input type="number" value="' + quantity + '" /></td>' + 
+      '<td class="cost"></td>' + 
+      '<td><button class="btn btn-sm btn-danger remove">Remove</button></td>' + 
+      '</tr>');
+
+    updateCart();
+
+    $(this).children('[name=food]').val('');
+    $(this).children('[name=price]').val('');
+    $(this).children('[name=quantity]').val('');
+    
+
+  
   })
 });
 

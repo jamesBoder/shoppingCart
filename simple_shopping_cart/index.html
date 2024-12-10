@@ -101,25 +101,24 @@
                   <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
                 </td>
               </tr>
-              
-              <tr id="addRow">
-                <th>
-                  <input type="text" placeholder="Enter Item" id="itemFood">
-                </th>
-                <td>
-                  <input type="number" placeholder="Enter Price" id="itemPrice">
-                </td>
-                <td>
-                  <input type="number" placeholder="Enter Quantity" id="itemQuantity">
-                </td>
-                <td></td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-sm add">Add</button>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
+        <div class="flex-container" id="addRow">
+           
+          <input class="inputClass" type="text" placeholder="Enter Item" name="food" id="itemFood" required>
+        
+
+          <input class="inputClass" type="number" placeholder="Enter Price" name="price" id="itemPrice">
+        
+        
+          <input class="inputClass" type="number" placeholder="Enter Quantity" name="quantity" id="itemQuantity">
+        
+        
+          <button type="button" class="btn btn-primary btn-sm add">Add</button>
+              
+        </div>
+        
         <div class="col-12 col-6 cart">
           <h2>Cart Total: $ <span id="cartTotal"></span></h2>
         </div>
@@ -127,5 +126,7 @@
     </div>
   </body>
 </html>
+
+
   
  
