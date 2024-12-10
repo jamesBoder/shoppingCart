@@ -14,57 +14,119 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <div class="container">
       <h1>Shopping Cart</h1>
-    </header>
-    <table class="content-table">
-      <thead>
-        <tr>
-          <th>Food</th>
-          <th>Prices</th>
-          <th>Quantity</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Apples</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr class="active-row">
-          <td>Bananas</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Chicken</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Rice</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Cereal</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Juice</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="row">
+        <div class="col-12">
+          <table class="content-table table-responsive" >
+            <thead class="table-header">
+              <tr>
+                <th scope="col">Food</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Quantity</th> 
+                <th scope="col">Cost</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead> 
+            <tbody>
+              <tr>
+                <th class="food">Bread</th>
+                <td class='price'><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Chicken</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Rice</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Pasta</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Eggs</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Milk</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Apples</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="food">Oranges</th>
+                <td class="price"><input type="number" value="2"></td>
+                <td class="quantity"><input type="number" value="2"></td>
+                <td class="cost"></td>
+                <td>
+                  <button type="button" class='btn btn-sm btn-danger remove'>Remove</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex-container" id="addRow">
+           
+          <input class="inputClass" type="text" placeholder="Enter Item" name="food" id="itemFood" required>
+        
 
+          <input class="inputClass" type="number" placeholder="Enter Price" name="price" id="itemPrice">
+        
+        
+          <input class="inputClass" type="number" placeholder="Enter Quantity" name="quantity" id="itemQuantity">
+        
+        
+          <button type="button" class="btn btn-primary btn-sm add">Add</button>
+              
+        </div>
+        
+        <div class="col-12 col-6 cart">
+          <h2>Cart Total: $ <span id="cartTotal"></span></h2>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
+
+  
+ 

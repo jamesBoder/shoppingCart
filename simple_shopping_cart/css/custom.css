@@ -1,36 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+container {
+  margin: auto;
+}
+
 /* Header */
 h1 {
   color: cadetblue;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
   text-decoration: underline;
 }
 
-
+/*Body*/
+body{
+  min-height: 100vh;
+  background-color: bisque; 
+}
 
 /* Main Table */
 
 .content-table {
   border-collapse: collapse;
-  margin: 40px 10px;
-  font-size: 1.2em;
-  min-width: 700px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 10px 10px 0 0;
+  margin: 40px 20px;
+  font-size: 1.3em;
+  min-width: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  border-radius: 20px 20px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-image: url(/simple_shopping_cart/simple_shopping_cart/images/groceries-5216716_1280.jpg);
+  background-size: auto;
+}
+
+.content-table thead {
+  position: sticky;
+  top: 0;
+  left: 0;
+
 }
 
 .content-table thead tr {
   background-color: cadetblue;
+  font-size: 25px;
   color: white;
-  text-align: left;
   font-weight: bold;
 }
 
 .content-table th,
 .content-table tr {
   padding: 20px 25px;
+  text-shadow: 50px;
 }
 
 .content-table tbody tr {
@@ -39,16 +63,63 @@ h1 {
   padding: 25px;
 } 
 
-.content-table tbody tr:nth-of-type(even) {
+/*.content-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
-}
+}*/
 
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid cadetblue;
 }
 
-.content-table tbody tr.active-row {
+.content-table tbody tr:nth-of-type(even) {
   font-weight: bold;
   color: cadetblue; 
 }
+
+.content-table tbody tr:nth-of-type(odd) {
+  font-weight: bold;
+  color: rgb(241, 6, 6); 
+}
+
+.content-table tbody tr:hover {
+  background-color: #fff6fb;
+}
+
+/*.content-table th td {
+  padding: 20px;
+  border-radius: 20px;
+  
+}*/
+
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  width: 200px;
+  padding: 2px;
+}
+
+input,
+input:placeholder-shown{
+  font-size: medium;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+
+
+
+
 
