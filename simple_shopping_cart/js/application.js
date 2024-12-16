@@ -85,6 +85,7 @@ $(document).ready(function () {
       '<td><button class="btn btn-sm btn-danger remove">Remove</button></td>' + 
       '</tr>');
 
+
       setInterval(function () {
         $('tbody tr').each(function(i, ele) {
           let unitPrice = parseFloat($(ele).find('.price input').val());
@@ -117,10 +118,13 @@ $(document).ready(function () {
     $('[name=food]').val('');
     $('[name=price]').val('');
     $('[name=quantity]').val('');
-    
 
+    window.addEventListener("mousemove", function (event) {
+      updateCart();
+    });
   
-  })
+  });
+
 });
 
 
