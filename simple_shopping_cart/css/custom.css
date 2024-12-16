@@ -127,6 +127,12 @@ button {
   border-radius: 10px;
 }
 
+.cart{
+  border: solid 1px cadetblue;
+  border-radius: 5px;
+  min-width: min-content;
+}
+
 
 
 
