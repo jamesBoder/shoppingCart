@@ -1,12 +1,11 @@
 $(document).ready(function () {
-  $('tbody tr').each(function(i, ele) {
-    let unitPrice = parseFloat($(ele).find('.price input').val());
-    let quantity = parseFloat($(ele).find('.quantity input').val());
+    $('tbody tr').each(function(i, ele) {
+      let unitPrice = parseFloat($(ele).find('.price input').val());
+      let quantity = parseFloat($(ele).find('.quantity input').val());
 
-    let cost = unitPrice * quantity;
-    $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
-  });
-  
+      let cost = unitPrice * quantity;
+      $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
+    });
 });
 
 var total = function (){
@@ -37,7 +36,7 @@ var updateCart = function () {
   });
 
   var cartTotal = costColumn.reduce(sum);
-  document.getElementById('cartTotal').html(cartTotal);
+  $('cartTotal').html(cartTotal);
 };
 
 $(document).ready(function () {
@@ -57,38 +56,67 @@ $(document).ready(function () {
   });
 
   $('tr input').on('input', function(){
-    $('tbody tr').each(function(i, ele) {
-      let unitPrice = parseFloat($(ele).find('.price input').val());
-      let quantity = parseFloat($(ele).find('.quantity input').val());
+    
+      $('tbody tr').each(function(i, ele) {
+        let unitPrice = parseFloat($(ele).find('.price input').val());
+        let quantity = parseFloat($(ele).find('.quantity input').val());
+    
+        let cost = unitPrice * quantity;
+        $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
+      });
   
-      let cost = unitPrice * quantity;
-      $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
-    });
 
-    updateCart();
   })
   
 
   $('#addRow').on('click', '.btn.add', function (event) {
     event.preventDefault();
-    let food = $(this).children('[name=food]').value;
-    let price = $(this).children('[name=price]').value;
-    let quantity = $(this).children('[name=quantity]').value;
+    
+    let food = $('[name=food]').val();
+    let price = parseFloat($('[name=price]').val());
+    let quantity = parseFloat($('[name=quantity]').val());
     
     
     $('tbody').append('<tr>' + 
       '<th class="food">' + food + '</th>' + 
-      '<td class="price"><input type="number" value="' + price + '"/></td>' + 
+      '<td class="price"><input type="number" value="' + price + '" /></td>' + 
       '<td class="quantity"><input type="number" value="' + quantity + '" /></td>' + 
       '<td class="cost"></td>' + 
       '<td><button class="btn btn-sm btn-danger remove">Remove</button></td>' + 
       '</tr>');
 
-    updateCart();
+      setInterval(function () {
+        $('tbody tr').each(function(i, ele) {
+          let unitPrice = parseFloat($(ele).find('.price input').val());
+          let quantity = parseFloat($(ele).find('.quantity input').val());
+    
+          let cost = unitPrice * quantity;
+          $(ele).children('.cost').html("$" + `${cost.toFixed(2)}`);
+        });
+      },1000);
 
-    $(this).children('[name=food]').val('');
-    $(this).children('[name=price]').val('');
-    $(this).children('[name=quantity]').val('');
+      var sum = function (acc, x) {return acc + x;};
+
+
+      setInterval(function() {
+        var updateCart = function () {
+          var costColumn = [];
+
+          $('tbody tr').each(function(i, ele) {
+            let cost = total();
+            costColumn.push(cost);
+          });
+
+          var cartTotal = costColumn.reduce(sum);
+          $('cartTotal').html(cartTotal);
+        };
+      }, 500);
+
+      
+
+    $('[name=food]').val('');
+    $('[name=price]').val('');
+    $('[name=quantity]').val('');
     
 
   
