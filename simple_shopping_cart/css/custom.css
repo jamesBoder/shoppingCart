@@ -26,6 +26,7 @@ body{
 
 .content-table {
   border-collapse: collapse;
+  border-spacing: 5px;
   margin: 40px 20px;
   font-size: 1.3em;
   min-width: 100%;
@@ -34,7 +35,8 @@ body{
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   background-image: url(/simple_shopping_cart/simple_shopping_cart/images/groceries-5216716_1280.jpg);
-  background-size: auto;
+  background-position: center;
+  background-size: cover;
 }
 
 .content-table thead {
@@ -102,8 +104,11 @@ th {
 
 input {
   text-align: center;
-  width: 200px;
+  width: 150px;
   padding: 2px;
+  border-radius: 10px;
+  border: 1px solid #ccc
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 input,
@@ -115,6 +120,11 @@ input:placeholder-shown{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+button {
+  border: 1px
+  border-radius: 10px;
 }
 
 
