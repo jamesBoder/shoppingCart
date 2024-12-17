@@ -34,7 +34,7 @@ body{
   border-radius: 20px 20px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  background-image: url(/simple_shopping_cart/simple_shopping_cart/images/groceries-5216716_1280.jpg);
+  background-image: url(images/groceries-5216716_1280.jpg);
   background-position: center;
   background-size: cover;
 }
